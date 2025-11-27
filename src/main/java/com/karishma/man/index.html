@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MannMitra 🧠💜 — Mental & General Health</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>MannMitra 🧠💜</h1>
+    <p>Your personal wellness companion — type your symptoms or feelings and get home remedies & doctor suggestions.</p>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Symptom Input Section -->
+    <section class="card">
+      <h2>Describe Your Symptoms or Feelings 📝</h2>
+      <textarea id="symptomInput" placeholder="e.g. headache, anxiety, feeling low, can't sleep"></textarea>
+      <div class="controls">
+        <button id="checkBtn">Check Remedies 🔍</button>
+        <button id="clearBtn">Clear ✖️</button>
+        <label class="small"><input id="showAll" type="checkbox" /> Show all matches 📌</label>
+      </div>
+      <p class="note">Educational: Not a medical diagnosis. For emergencies, contact a healthcare professional immediately.</p>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results" class="card hidden">
+      <h2>Suggestions & Remedies 🩺</h2>
+      <div id="matchesContainer"></div>
+    </section>
+
+    <!-- Recent Queries (Queue) -->
+    <section class="card">
+      <h2>Recent Queries ⏳</h2>
+      <div id="recentQueries" class="queue-box">No queries yet.</div>
+    </section>
+
+    <!-- Data Structures Used -->
+    <section class="card">
+      <h2>Data Structures Used 💡</h2>
+      <ul>
+        <li><strong>Array (`CONDITIONS`)</strong> — Stores all 40 conditions as objects (id, keywords, remedies, etc.).</li>
+        <li><strong>Map (`keywordMap`)</strong> — Maps keyword → set of condition IDs for fast lookup.</li>
+        <li><strong>Queue (`recentQueriesQueue`)</strong> — Stores the last 5 user queries (FIFO behavior).</li>
+      </ul>
+    </section>
+
+    <!-- Common Health Topics -->
+    <section class="card">
+      <h2>Common Health Topics 🩺</h2>
+      <div class="grid">
+        <div class="info-box"><h3>Cold & Cough 🤧</h3><p>Hydrate, steam, rest.</p></div>
+        <div class="info-box"><h3>Headache 🤕</h3><p>Hydrate, rest, eye breaks.</p></div>
+        <div class="info-box"><h3>Anxiety 😰</h3><p>Breathing, walk, grounding.</p></div>
+        <div class="info-box"><h3>Fatigue 🛌</h3><p>Sleep, hydration, light exercise.</p></div>
+        <div class="info-box"><h3>Sleep Trouble 😴</h3><p>Bedtime routine, limit screens, relax.</p></div>
+        <div class="info-box"><h3>Stress 😓</h3><p>Breaks, mindfulness, talk to someone.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>⚠️ For emergencies, call local emergency services immediately.</p>
+  </footer>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
